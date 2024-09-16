@@ -1,0 +1,63 @@
+.left {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    float: left;
+    width: 60%;
+    background-color: white;
+    height: 100vh;
+}
+
+.right {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+    width: 40%;
+    background: linear-gradient(rgb(21, 21, 187), rgb(105, 105, 198));
+    height: 100vh;
+    outline: 10px solid navy;
+}
+
+.title {
+    text-align: center;
+    margin: 0 0 -10px 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.newHere {
+    text-align: center;
+    margin: -75px 0 0 0;
+    color: white;
+}
+
+.subtitle {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.instructions {
+    color: white;
+}
+
+.textbox {
+    width: 75%;
+    margin: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 2px grey solid;
+    padding: 10px;
+}
+
+.login, .register {
+    margin: 10px;
+    width: 100px;
+    padding: 5px;
+    color: white;
+    background-color: navy;
+    border-radius: 5px;
+}

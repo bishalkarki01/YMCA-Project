@@ -1,0 +1,57 @@
+.registrationPage {
+    background: linear-gradient(rgb(21, 21, 187), rgb(105, 105, 198));;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    position: absolute;
+    padding: 5px;
+    width: max-content;
+    top: 1%;
+    left: 1%;
+}
+
+.center {
+    background-color: navy;
+    padding: 30px;
+    text-align: center;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.regTitle {
+    color: white;
+    padding: 0 0 5px 0;
+}
+
+.regBoxes {
+    width: 122%;
+    padding: 0 0 40px 0;
+}
+
+.registerButton {
+    position: absolute;
+    float: right;
+    width: 100px;
+    padding: 5px;
+    bottom: 125px;
+    right: 51%;
+}
+
+.cancelButton {
+    position: absolute;
+    float: left;
+    width: 100px;
+    padding: 5px;
+    bottom: 125px;
+    left: 51%;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 2px grey solid;
+    padding: 10px;
+}
