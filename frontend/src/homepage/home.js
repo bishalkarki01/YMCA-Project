@@ -14,7 +14,7 @@ function HomePage() {
         <button>Register</button>
       </Link>
 
-      <Link to="/">
+      <Link to="/login">
         <button>Login</button>
       </Link>
     </div>
