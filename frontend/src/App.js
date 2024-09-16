@@ -1,6 +1,7 @@
 /** @format */
 
-import "./App.css";
+import React from "react";
+
 import logo from "./logo.svg";
 
 function App() {
