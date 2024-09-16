@@ -37,7 +37,7 @@ function RegistrationPage() {
 
     return (
         <div className="registrationPage">
-            <Link to="/">
+            <Link to="/login">
                 <button className="back">Back to Home</button>
             </Link>
             <div className="center">
@@ -101,7 +101,7 @@ function RegistrationPage() {
                 <Link to="/home">
                     <button className="registerButton"><b>Register</b></button>
                 </Link>
-                <Link to="/">
+                <Link to="/login">
                     <button className="cancelButton"><b>Cancel</b></button>
                 </Link>
             </div>
