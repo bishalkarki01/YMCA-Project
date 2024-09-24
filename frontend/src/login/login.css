@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    float: left;
+    float: left; 
     width: 60%;
     background-color: white;
     height: 100vh;
@@ -16,9 +16,9 @@
     flex-direction: column;
     float: right;
     width: 40%;
-    background: linear-gradient(rgb(21, 21, 187), rgb(105, 105, 198));
+    background: #135899;
     height: 100vh;
-    outline: 10px solid navy;
+    outline: 10px solid #135899;
 }
 
 .title {
@@ -43,21 +43,55 @@
 }
 
 .textbox {
-    width: 75%;
+    width: 70%;
     margin: 10px;
+}
+#password{
+    width: 100%;
+
 }
 
 input[type="text"] {
     width: 100%;
     border: 2px grey solid;
     padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; 
+    border: 1px solid #cfd8dc; 
+    border-radius: 4px; 
 }
 
-.login, .register {
-    margin: 10px;
-    width: 100px;
-    padding: 5px;
-    color: white;
-    background-color: navy;
-    border-radius: 5px;
+input[type="password"] {
+    width: 100%;
+    border: 2px grey solid;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; 
+    border: 1px solid #cfd8dc; 
+    border-radius: 4px; 
 }
+
+
+
+  /* Button styling */
+  .btn-login, .btn-register {
+    background-color: #135899;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .btn-register {
+    background-color: white;
+    color:black
+  }
+  
+  .btn-login:hover, .btn-register:hover {
+    opacity: 0.8;
+  }
+  
