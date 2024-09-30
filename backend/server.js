@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+//const jwt = require("jsonwebtoken");
+const userSchema = require("./model/User");
 
 // Initialize Express app
 const app = express();
