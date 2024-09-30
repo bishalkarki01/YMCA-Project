@@ -26,19 +26,6 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
-// User schema
-const userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  address: String,
-  phone: String,
-  email: { type: String, unique: true },
-  password: String,
-  userType: String,
-});
-
-const User = mongoose.model("User", userSchema);
-
 // Registration route
 app.post("/register", async (req, res) => {
   const { firstName, lastName, address, phone, email, password, userType } =
@@ -52,22 +39,16 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ error: "Choose another email address" });
     }
 
-    // Hash the password using bcrypt
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    // Create a new user with the hashed password
+    // Create a new user if not already registered
     const newUser = new User({
       firstName,
       lastName,
       address,
       phone,
       email,
-      password: hashedPassword, // Store hashed password
+      password,
       userType,
     });
-
-    // Save the new user
     await newUser.save();
 
     res.status(201).send({ message: "User registered successfully" });
@@ -78,34 +59,30 @@ app.post("/register", async (req, res) => {
 });
 
 // Login route
-app.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+// app.post("/login", async (req, res) => {
+//   const { email, password } = req.body;
 
-  try {
-    // Check if the user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: "User not found" });
-    }
+//   try {
+//     const user = await User.findOne({ email });
+//     if (!user) {
+//       return res.status(400).json({ message: "User not found" });
+//     }
 
-    // Compare the hashed password with the entered password
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Invalid credentials" });
-    }
+//     const isMatch = await bcrypt.compare(password, user.password);
+//     if (!isMatch) {
+//       return res.status(400).json({ message: "Invalid credentials" });
+//     }
 
-    // Generate a JWT token
-    const token = jwt.sign({ userId: user._id }, "secretKey", {
-      expiresIn: "1h",
-    });
+//     // Generate a JWT token
+//     const token = jwt.sign({ userId: user._id }, "secretKey", {
+//       expiresIn: "1h",
+//     });
 
-    res.status(200).json({ token, message: "Login successful" });
-  } catch (error) {
-    console.error("Error logging in:", error);
-    res.status(500).json({ message: "Server error" });
-  }
-});
-
+//     res.status(200).json({ token, message: "Login successful" });
+//   } catch (error) {
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
 // Start the server
 const PORT = 5001;
 app.listen(PORT, () => {
