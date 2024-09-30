@@ -25,7 +25,7 @@ function RegistrationPage() {
       phone,
       email: newEmail,
       password: newPassword,
-      userType: "participant",
+      userType: "admin",
     };
     console.log(userData);
 
@@ -53,8 +53,6 @@ function RegistrationPage() {
       <form onSubmit={handleSubmit}>
         <div className="register-card">
           <h2>REGISTRATION</h2>
-          {errorMessage && <div className="error">{errorMessage}</div>}{" "}
-          {/* Display error message */}
           <div className="row">
             <input
               type="text"
@@ -111,6 +109,8 @@ function RegistrationPage() {
               placeholder="Password"
             />
           </div>
+          {errorMessage && <div className="error">{errorMessage}</div>}{" "}
+          {/* Display error message */}
           <div className="row">
             <button type="submit" className="btn btn-primary">
               Register
