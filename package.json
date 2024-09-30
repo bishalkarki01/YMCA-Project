@@ -13,14 +13,12 @@
   "dependencies": {
     "@angular/common": "^7.2.16",
     "@angular/http": "^7.2.16",
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.6.1",
     "react-router-dom": "^6.26.2",
-    "rxjs": "^6.6.7"
+    "rxjs": "^7.8.1"
   }
 }
