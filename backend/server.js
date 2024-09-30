@@ -7,9 +7,6 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Import the User model
-const User = require("./model/User");
-
 // Initialize Express app
 const app = express();
 
